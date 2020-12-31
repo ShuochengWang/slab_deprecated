@@ -21,9 +21,5 @@ readme = "README.md"
 keywords = ["slab", "allocator"]
 categories = ["memory-management", "data-structures"]
 
-[features]
-default = []
-sgx-feature = ["sgx_tstd"]
-
-[dependencies]
-sgx_tstd = { git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
+[target.'cfg(sgx)'.dependencies]
+sgx_tstd = { git = "https://github.com/apache/teaclave-sgx-sdk.git" }
